@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#c9f2ff">
+    <title>夏のひんやりトレジャー</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="problem">
+    <main>
+      <p class="eyebrow">8/10〜8/17 毎日更新</p>
+      <h1 class="brand">夏のひんやりトレジャー</h1>
+
+      <section class="card" data-screen="today" hidden>
+        <p class="lead" data-day-label></p>
+        <h2 class="mission">この画像を見て<br>何を持っているか当てろ！</h2>
+        <button class="open-puzzle" type="button" data-open-puzzle>画像を見る</button>
+
+        <div class="puzzle-area" data-puzzle-area hidden>
+          <div class="puzzle">
+            <img data-problem-image src="" alt="">
+            <div class="mosaic" aria-hidden="true"><span>?</span></div>
+          </div>
+          <p class="image-error" data-image-error hidden>
+            本日の画像を準備中です。少し時間をおいて、もう一度お試しください。
+          </p>
+          <h2 class="next-mission">モザイクの答えを解読せよ！</h2>
+          <ol class="steps">
+            <li><b>1</b><span>スタッフから今日の「合言葉」を聞こう</span></li>
+            <li><b>2</b><span>LINEのトーク画面に合言葉を入力しよう</span></li>
+            <li><b>3</b><span>届いた「解読完了」画像をタップしよう</span></li>
+          </ol>
+          <p class="hint">合言葉を入力する場所はLINEのトーク画面です</p>
+        </div>
+      </section>
+
+      <section class="card status" data-screen="before" hidden>
+        <h2>もうすぐ始まるよ！</h2>
+        <p>開催は2026年8月10日〜17日。<br>リッチメニューから毎日挑戦してね。</p>
+      </section>
+
+      <section class="card status" data-screen="after" hidden>
+        <h2>企画は終了しました</h2>
+        <p>夏のひんやりトレジャーにご参加いただき、ありがとうございました。</p>
+      </section>
+
+      <section class="card status" data-screen="unavailable" hidden>
+        <h2>本日のなぞを準備中です</h2>
+        <p>少し時間をおいて、もう一度リッチメニューからお試しください。</p>
+      </section>
+    </main>
+    <script src="config/date-control.js"></script>
+    <script src="config/campaign.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

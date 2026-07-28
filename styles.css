@@ -1,0 +1,297 @@
+:root {
+  color-scheme: light;
+  --navy: #063b5c;
+  --blue: #087cb5;
+  --ice: #eafaff;
+  --gold: #f7c947;
+  --white: #ffffff;
+  --shadow: 0 18px 50px rgb(3 64 94 / 20%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #dff7ff;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--navy);
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 12% 10%, rgb(255 255 255 / 90%) 0 4%, transparent 16%),
+    radial-gradient(circle at 88% 14%, rgb(85 204 243 / 35%) 0 5%, transparent 18%),
+    linear-gradient(160deg, #f5fdff 0%, #c9f2ff 48%, #88dcf5 100%);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(120deg, transparent 45%, rgb(255 255 255 / 25%) 50%, transparent 55%),
+    radial-gradient(circle, rgb(255 255 255 / 75%) 0 2px, transparent 3px);
+  background-size: 100% 100%, 44px 44px;
+}
+
+main {
+  position: relative;
+  width: min(100% - 28px, 720px);
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.brand {
+  margin: 0 0 6px;
+  font-size: clamp(1.65rem, 7vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-shadow: 0 3px 0 var(--white);
+}
+
+.eyebrow,
+.lead,
+.hint,
+.note {
+  margin: 0;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.lead {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.mission,
+.next-mission {
+  margin: 14px 0;
+  font-size: clamp(1.25rem, 5.4vw, 1.8rem);
+  line-height: 1.45;
+  text-align: center;
+}
+
+.open-puzzle {
+  display: block;
+  width: min(100%, 420px);
+  margin: 22px auto 8px;
+  padding: 17px 24px;
+  color: var(--white);
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 900;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0a91cb, #045581);
+  border: 3px solid var(--white);
+  border-radius: 999px;
+  box-shadow: 0 9px 0 #063b5c, 0 16px 28px rgb(3 64 94 / 24%);
+}
+
+.open-puzzle:active {
+  transform: translateY(5px);
+  box-shadow: 0 4px 0 #063b5c, 0 9px 18px rgb(3 64 94 / 20%);
+}
+
+.puzzle-area {
+  scroll-margin-top: 12px;
+}
+
+.next-mission {
+  color: var(--blue);
+}
+
+.card {
+  margin-top: 18px;
+  padding: clamp(14px, 4vw, 24px);
+  overflow: hidden;
+  background: rgb(255 255 255 / 90%);
+  border: 3px solid var(--white);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.puzzle {
+  position: relative;
+  overflow: hidden;
+  background: #bdefff;
+  border-radius: 18px;
+  isolation: isolate;
+}
+
+.puzzle img,
+.answer img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mosaic {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    repeating-conic-gradient(
+      rgb(2 56 85 / 45%) 0 25%,
+      rgb(255 255 255 / 35%) 0 50%
+    ) 0 / 24px 24px;
+  backdrop-filter: blur(20px) saturate(0.45);
+  border-left: 3px dashed rgb(255 255 255 / 85%);
+}
+
+.mosaic span {
+  display: grid;
+  width: clamp(76px, 24vw, 130px);
+  aspect-ratio: 1;
+  place-items: center;
+  color: var(--white);
+  font-size: clamp(4rem, 20vw, 8rem);
+  font-weight: 1000;
+  line-height: 1;
+  background: rgb(4 75 110 / 72%);
+  border: 5px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgb(0 32 52 / 35%);
+}
+
+.steps {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+  align-items: center;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.steps b {
+  display: grid;
+  width: 34px;
+  aspect-ratio: 1;
+  place-items: center;
+  color: var(--white);
+  background: var(--blue);
+  border-radius: 50%;
+}
+
+.hint {
+  margin-top: 18px;
+  padding: 13px;
+  color: #563d00;
+  font-weight: 900;
+  background: #fff4c4;
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+}
+
+.answer {
+  overflow: hidden;
+  background: var(--ice);
+  border: 5px solid var(--gold);
+  border-radius: 20px;
+  box-shadow: 0 0 0 4px var(--white), 0 18px 38px rgb(3 64 94 / 24%);
+}
+
+.complete-title {
+  margin: 0 0 16px;
+  color: #825d00;
+  font-size: clamp(1.25rem, 5.5vw, 2rem);
+  font-weight: 1000;
+  text-align: center;
+}
+
+.show-staff {
+  margin: 18px 0 0;
+  padding: 15px;
+  color: var(--white);
+  font-size: clamp(1rem, 4.5vw, 1.28rem);
+  font-weight: 900;
+  text-align: center;
+  background: linear-gradient(135deg, #087cb5, #045581);
+  border-radius: 14px;
+}
+
+.reward {
+  margin: 12px 0 0;
+  color: #725100;
+  font-weight: 900;
+  text-align: center;
+}
+
+.status {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.status h2 {
+  margin: 0 0 12px;
+  font-size: 1.55rem;
+}
+
+.status p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.image-error {
+  margin: 12px 0 0;
+  padding: 12px;
+  color: #8a2b17;
+  font-weight: 800;
+  text-align: center;
+  background: #fff0eb;
+  border-radius: 10px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 700px) {
+  main {
+    padding-top: 42px;
+  }
+
+  .card {
+    border-radius: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    animation: rise 480ms ease-out both;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+}
