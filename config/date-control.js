@@ -4,5 +4,5 @@ window.TREASURE_DATE_CONTROL = {
   mode: "test",
 
   // テストしたい開催日を YYYY-MM-DD で指定
-  testDate: "2026-08-12"
+  testDate: "2026-08-13"
 };
